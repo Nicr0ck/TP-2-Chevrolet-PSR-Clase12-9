@@ -176,22 +176,87 @@ public class Main {
                             } else {
                                 for (Vehiculo vehiculos_guardados : lista_vehiculos) {
                                     JOptionPane.showMessageDialog(null,
-                                            "patente: " + vehiculos_guardados.getPatente() +
-                                                    "\n");
+                                                    "Patente: " + vehiculos_guardados.getPatente() +
+                                                    "\nMarca: " + vehiculos_guardados.getMarca() +
+                                                    "\nModelo: " + vehiculos_guardados.getModelo() +
+                                                    "\nColor: " + vehiculos_guardados.getColor() +
+                                                    "\nCantidad de puertas: " + vehiculos_guardados.getCantidad_de_puertas() +
+                                                    "\nTipo de caja: " + vehiculos_guardados.getTipo_de_caja() + 
+                                                    "\nPrecio del vehiculo: " + vehiculos_guardados.getPrecio() +
+                                                    "\nEstado: " + vehiculos_guardados.getEstado());
                                 }
                             }
                             break;
                         //Buscar vehiculo
                         case 3:
                             JOptionPane.showMessageDialog(null, "Has Seleccionado Buscar vehiculo");
+                            String patente_busqueda = JOptionPane.showInputDialog("Introducir patente del vehiculo a buscar");
+                            for (Vehiculo vehiculo_encontrado : lista_vehiculos){
+                                if(vehiculo_encontrado.getPatente().equals(patente_busqueda)){
+                                    JOptionPane.showMessageDialog(null,
+                                                    "Patente: " + vehiculo_encontrado.getPatente() +
+                                                    "\nMarca: " + vehiculo_encontrado.getMarca() +
+                                                    "\nModelo: " + vehiculo_encontrado.getModelo() +
+                                                    "\nColor: " + vehiculo_encontrado.getColor() +
+                                                    "\nCantidad de puertas: " + vehiculo_encontrado.getCantidad_de_puertas() +
+                                                    "\nTipo de caja: " + vehiculo_encontrado.getTipo_de_caja() + 
+                                                    "\nPrecio del vehiculo: " + vehiculo_encontrado.getPrecio() +
+                                                    "\nEstado: " + vehiculo_encontrado.getEstado());
+                                } 
+                            }
                             break;
                         //Editar vehiculos
                         case 4:
                             JOptionPane.showMessageDialog(null, "Has Seleccionado Editar vehiculo");
+                            String patente_a_modificar = JOptionPane.showInputDialog("Introducir patente del vehiculo que desea modificar");
+                            boolean patente_modificar = false;
+                            for (Vehiculo vehiculo_encontrado : lista_vehiculos){
+                                if(vehiculo_encontrado.getPatente().equals(patente_a_modificar)){
+                                    JOptionPane.showMessageDialog(null,
+                                                    "Patente: " + vehiculo_encontrado.getPatente() +
+                                                    "\nMarca: " + vehiculo_encontrado.getMarca() +
+                                                    "\nModelo: " + vehiculo_encontrado.getModelo() +
+                                                    "\nColor: " + vehiculo_encontrado.getColor() +
+                                                    "\nCantidad de puertas: " + vehiculo_encontrado.getCantidad_de_puertas() +
+                                                    "\nTipo de caja: " + vehiculo_encontrado.getTipo_de_caja() + 
+                                                    "\nPrecio del vehiculo: " + vehiculo_encontrado.getPrecio() +
+                                                    "\nEstado: " + vehiculo_encontrado.getEstado());
+                                    break;
+                                }
+                                String new_patente = JOptionPane.showInputDialog("Ingrese la nueva patente del vehiculo");
+                                String new_marca = JOptionPane.showInputDialog("Ingrese la nueva marca del vehiculo");
+                                String new_modelo = JOptionPane.showInputDialog("Ingrese el nuevo modelo del vehiculo");
+                                String new_color = JOptionPane.showInputDialog("Ingrese el nuevo color del vehiculo");
+                                int new_puertas = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad de puertas del vehiculo"));
+                                String new_caja = JOptionPane.showInputDialog("Ingrese el nuevo tipo de caja del vehiculo");
+                                double new_precio = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el nuevo precio del vehiculo"));
+                                String new_estado = JOptionPane.showInputDialog("Ingrese el nuevo estado del vehiculo");
+                                
+                                vehiculo_encontrado.setPatente(new_patente);
+                                vehiculo_encontrado.setMarca(new_marca);
+                                vehiculo_encontrado.setModelo(new_modelo);
+                                vehiculo_encontrado.setColor(new_color);
+                                vehiculo_encontrado.setCantidad_de_puertas(new_puertas);
+                                vehiculo_encontrado.setTipo_de_caja(new_caja);
+                                vehiculo_encontrado.setPrecio(new_precio);
+                                vehiculo_encontrado.setEstado(new_estado);
+                            }
                             break;
                         //Eliminar vehiculos
                         case 5:
                             JOptionPane.showMessageDialog(null, "Has Seleccionado Eliminar vehiculo");
+                            int patente_a_eliminar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la patente a eliminar:"));
+                            boolean patente_eliminar = false;
+                            for(Vehiculo vehiculo_encontrado : lista_vehiculos){
+                                if(vehiculo_encontrado.getPatente().equals(patente_a_eliminar)){
+                                    lista_vehiculos.remove(patente_a_eliminar);
+                                    patente_eliminar = true;
+                                    JOptionPane.showMessageDialog(null,"Vehiculo eliminado exitosamente");
+                                    break;
+                                }else {
+                                    JOptionPane.showMessageDialog(null, "No se ha encontrado la patente ingresada");
+                                }
+                            }
                             break;
                         default:
                             break;
