@@ -1,10 +1,15 @@
 package chevrolet;
 
 public class Empleado {
+public int dni;
 public String nombre;
 public String apellido;
 public double sueldo;
 public String rol;
+
+    public int getDni() {
+        return dni;
+    }
 
     public String getNombre() {
         return nombre;
@@ -21,7 +26,9 @@ public String rol;
     public String getRol() {
         return rol;
     }
-
+    public void setDni(int dni) {
+        this.dni = dni;
+    }
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
@@ -38,7 +45,8 @@ public String rol;
         this.rol = rol;
     }
 
-    public Empleado(String nombre, String apellido, double sueldo, String rol) {
+    public Empleado(int dni,String nombre, String apellido, double sueldo, String rol) {
+        this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.sueldo = sueldo;
