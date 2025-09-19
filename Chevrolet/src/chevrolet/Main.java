@@ -7,27 +7,27 @@ public class Main {
         ArrayList<Cliente> lista_clientes = new ArrayList<>();
         ArrayList<Empleado> lista_empleados = new ArrayList<>();
         ArrayList<Vehiculo> lista_vehiculos = new ArrayList<>();
-//        String Usuario = "geosoft";
-//        String Contraseña ="$geosoft$";
-//        boolean opcion_user = false;
-//        int Tries=3;
-//        while (Tries!=0) {
-//            Tries--;
-//            String IngresoUsuario = JOptionPane.showInputDialog("Bienvenido a consesionaria Fro:"
-//                                                                + "\nIngrese el usuario:");
-//            String IngresoContraseña = JOptionPane.showInputDialog("Ingrese la contraseña:");
-//            if(IngresoUsuario.equals(Usuario) && IngresoContraseña.equals(Contraseña)){
-//                 opcion_user=true;
-//                 break;
-//             }else if( (IngresoContraseña.equals(Contraseña) != true ||IngresoContraseña.equals(Contraseña)!=true) && Tries !=0){
-//             
-//                 JOptionPane.showMessageDialog(null,"Contraseña o usuario incorrecto por favor intentar devuelta " + Tries + " intento/s restantes.");
-//            }
-//            }
-//            if(opcion_user == false){
-//                JOptionPane.showMessageDialog(null,"Inicio de sesion fallido.");
-//            }
-        while(/*opcion_user =*/ true){
+        String Usuario = "geosoft";
+        String Contraseña ="$geosoft$";
+        boolean opcion_user = false;
+        int Tries=3;
+        while (Tries!=0) {
+            Tries--;
+            String IngresoUsuario = JOptionPane.showInputDialog("Bienvenido a consesionaria Fro:"
+                                                                + "\nIngrese el usuario:");
+            String IngresoContraseña = JOptionPane.showInputDialog("Ingrese la contraseña:");
+            if(IngresoUsuario.equals(Usuario) && IngresoContraseña.equals(Contraseña)){
+                 opcion_user=true;
+                 break;
+             }else if( (IngresoContraseña.equals(Contraseña) != true ||IngresoContraseña.equals(Contraseña)!=true) && Tries !=0){
+             
+                 JOptionPane.showMessageDialog(null,"Contraseña o usuario incorrecto por favor intentar devuelta. " + Tries + " intento/s restantes.");
+            }
+            }
+            if(opcion_user == false){
+                JOptionPane.showMessageDialog(null,"Inicio de sesion fallido.");
+            }
+        while(opcion_user = true){
             int opcion_menu = Integer.parseInt(JOptionPane.showInputDialog("Bienvenido! Seleccione una opcion:\n"
                     + "1 - Clientes\n"
                     + "2 - Empleados\n"
@@ -245,7 +245,7 @@ public class Main {
                         //Eliminar vehiculos
                         case 5:
                             JOptionPane.showMessageDialog(null, "Has Seleccionado Eliminar vehiculo");
-                            int patente_a_eliminar = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la patente a eliminar:"));
+                            String patente_a_eliminar = JOptionPane.showInputDialog("Ingrese la patente a eliminar:");
                             boolean patente_eliminar = false;
                             for(Vehiculo vehiculo_encontrado : lista_vehiculos){
                                 if(vehiculo_encontrado.getPatente().equals(patente_a_eliminar)){
