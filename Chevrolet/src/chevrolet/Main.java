@@ -176,7 +176,8 @@ public class Main {
                             } else {
                                 for (Vehiculo vehiculos_guardados : lista_vehiculos) {
                                     JOptionPane.showMessageDialog(null,
-                                            "patente: " + vehiculos_guardados.getPatente());
+                                            "patente: " + vehiculos_guardados.getPatente() +
+                                                    "\n");
                                 }
                             }
                             break;

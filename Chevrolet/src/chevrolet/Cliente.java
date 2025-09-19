@@ -1,11 +1,15 @@
 package chevrolet;
 
 public class Cliente {
+public int dni;
 public String nombre;
 public String apellido;
 public String correo;
 public int edad; 
 public String direccion;
+    public int getDni() {
+        return dni;
+    }
 
     public String getNombre() {
         return nombre;
@@ -47,7 +51,8 @@ public String direccion;
         this.direccion = direccion;
     }
 
-    public Cliente(String nombre, String apellido, String correo, int edad, String direccion) {
+    public Cliente(int dni,String nombre, String apellido, String correo, int edad, String direccion) {
+        this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
